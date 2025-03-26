@@ -1,0 +1,17 @@
+/* public/css/style.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #ff6347;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  

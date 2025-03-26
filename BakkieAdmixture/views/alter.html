@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bakkie Admixture - Alter</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .food-item {
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+      padding: 10px;
+      border-radius: 10px;
+    }
+    form {
+      margin-bottom: 30px;
+    }
+    input[type="text"], textarea {
+      width: 90%;
+      padding: 10px;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    input[type="submit"] {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background: #ff6347;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Alter Food Items</h1>
+  
+  <h2>Add New Food Item</h2>
+  <form action="/alter" method="POST">
+    <input type="text" name="foodName" placeholder="Food Name" required><br>
+    <input type="text" name="imageUrl" placeholder="Image URL" required><br>
+    <textarea name="ingredients" placeholder="Ingredients" required></textarea><br>
+    <input type="submit" value="Add Food">
+  </form>
+  
+  <h2>Edit Existing Food Items</h2>
+  <!-- Example for existing food items -->
+  <div class="food-item">
+    <h3>Briyani</h3>
+    <p>Ingredients: Rice, chicken/mutton, spices, yogurt, onions, garlic, ginger.</p>
+    <button onclick="alert('Edit functionality not implemented')">Edit</button>
+  </div>
+  <div class="food-item">
+    <h3>Sambar Rice</h3>
+    <p>Ingredients: Rice, toor dal, vegetables, tamarind, sambar powder, mustard seeds.</p>
+    <button onclick="alert('Edit functionality not implemented')">Edit</button>
+  </div>
+  <!-- You can add more items similarly -->
+  
+  <br>
+  <a href="/home">Back to Home</a>
+</body>
+</html>

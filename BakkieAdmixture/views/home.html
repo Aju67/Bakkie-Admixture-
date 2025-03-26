@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakkie Admixture - Home</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+    <style>
+        :root {
+            --primary: #042b7e;
+            --secondary: #333;
+            --accent: #ffd700;
+            --text-light: #fff;
+            --text-dark: #333;
+            --shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: var(--text-light);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .top-nav {
+            background: var(--primary);
+            padding: 6px 0;
+            text-align: center;
+            color: var(--text-light);
+        }
+
+        .main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background: var(--text-light);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo img {
+            height: 80px;
+            border-radius: 60%;
+        }
+
+        .logo span {
+            font-size: 2em;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background: var(--primary);
+            color: var(--text-light);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 140px;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slider {
+            height: calc(100vh - 140px);
+        }
+
+        .slide {
+            position: relative;
+            height: calc(100vh - 140px);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide-content {
+            text-align: center;
+            color: var(--text-light);
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            max-width: 800px;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Products Section */
+        .products {
+            padding: 80px 5%;
+            background: #f9f9f9;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--text-dark);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .product-card {
+            background: var(--text-light);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .product-image {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-title {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .product-price {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: var(--text-light);
+            padding: 50px 5% 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="top-nav">
+            Chasing you Soon🚚
+        </div>
+        <div class="main-nav">
+            <div class="logo">
+                <img src="/images/logo.png" alt="Bakkie Admixture Logo">
+                <span>Bakkie Admixture</span>
+            </div>
+            <nav class="nav-links">
+                <a href="/foods">Foods</a>
+                <a href="/procedure">Procedure</a>
+                <a href="/alter">Alter</a>
+                <a href="/feedback">Feedback</a>
+                <a href="/contact">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="slider">
+            <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/bike.jpg')">
+                <div class="slide-content">
+                    <h1>Welcome to Bakkie Admixture</h1>
+                    <p>Discover the finest ingredients for your culinary adventures</p>
+                </div>
+            </div>
+            <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/bag.jpg')">
+                <div class="slide-content">
+                    <h1>Premium Quality</h1>
+                    <p>Hand-picked ingredients for exceptional taste</p>
+                </div>
+            </div>
+            <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/spices.jpg')">
+                <div class="slide-content">
+                    <h1>Expert Selection</h1>
+                    <p>Curated by culinary experts for perfect results</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products">
+        <h2 class="section-title">Available Products</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="/images/briyani.png.jpg" alt="Product 1" class="/images/briyani.png">
+                <div class="product-info">
+                    <h3 class="product-title">Briyani</h3>
+                    <p>Perfect for Every Happiness</p>
+                    <p class="product-price">₹350</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="/images/sambarrice.png.jpg" alt="Product 2" class="/image/sambarrice.png">
+                <div class="product-info">
+                    <h3 class="product-title">Sambar Rice</h3>
+                    <p>Fresh and aromatic selection</p>
+                    <p class="product-price">₹200</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="/images/butterchicken.png.jpg" alt="Product 3" class="/image/butterchicken.png">
+                <div class="product-info">
+                    <h3 class="product-title">Butter Chicken</h3>
+                    <p>Unique flavored Tasty collection</p>
+                    <p class="product-price">₹250</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Bakkie Admixture is your premier source for quality food ingredients and innovative recipes.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/foods">Our Products</a></li>
+                    <li><a href="/procedure">How It Works</a></li>
+                    <li><a href="/feedback">Customer Reviews</a></li>
+                    <li><a href="/contact">Get in Touch</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li>Email: info@bakkieadmixture.com</li>
+                    <li>Phone: 82205 12617</li>
+                    <li>Address: Coimbatore, India</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Bakkie Admixture | All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let slider = tns({
+                container: '.slider',
+                items: 1,
+                slideBy: 'page',
+                autoplay: true,
+                autoplayButtonOutput: false,
+                controls: false,
+                nav: true,
+                speed: 400,
+                autoplayTimeout: 5000,
+                animateIn: 'fadeIn',
+                animateOut: 'fadeOut'
+            });
+        });product-ima
+    </script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakkie Admixture</title>
+    <style>
+        /* Reset default browser styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Fullscreen background */
+        body {
+            background: url('/images/main.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Overlay on background for contrast */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            
+            z-index: 1;
+        }
+        .neon-text {
+    font-size: 2rem;
+    font-family: cursive;
+    color: #0d0d0d;
+    text-shadow: 0 0 5px #ff005e, 0 0 10px #ff005e, 0 0 20px #ff005e, 0 0 40px #ff005e, 0 0 80px #ff005e;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #ff005e, 0 0 10px #ff005e, 0 0 20px #ff005e, 0 0 40px #ff005e, 0 0 80px #ff005e;
+    }
+    100% {
+        text-shadow: 0 0 10px #dfe20c, 0 0 20px #dfe20c, 0 0 40px #dfe20c, 0 0 80px #dfe20c, 0 0 160px #dfe20c;
+    }
+}
+
+        .content {
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Logo animation */
+        .logo {
+            width: 250px;
+            margin-bottom: 20px;
+            animation: logoAnimation 2s ease-in-out;
+            transform: scale(1.8);
+        }
+
+        @keyframes logoAnimation {
+            0% {
+                transform: scale(1.5);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1.8);
+            }
+        }
+
+        /* Hover containers */
+        /* Hover containers */
+.hover-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    width: 100%;
+    padding: 40px;
+    gap: 10px; /* Added gap between hover items */
+}
+
+/* Hover item style */
+.hover-item {
+    position: relative;
+    width: 200px;
+    height: 150px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, z-index 0.3s ease; /* Added z-index transition */
+    z-index: 1; /* Default z-index */
+}
+
+.hover-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.hover-item:hover {
+    transform: translateY(-10px);
+    transform: scale(1.5);
+    z-index: 10; /* Higher z-index to bring the hovered item in front */
+}
+
+.hover-item:hover img {
+     /* Added opacity change for hover effect */
+    box-shadow: 0 4px 20px rgba(255, 69, 0, 0.7); /* Corrected box-shadow */
+}
+
+
+        .hover-item.active {
+            z-index: 10; /* Bring clicked item to the front */
+        }
+
+        /* Paragraph style */
+        .description {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.8;
+            z-index: 2;
+        }
+
+        /* Login button */
+        .login-btn {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            color: white;
+            background-color: #000000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            z-index: 2;
+        }
+
+        .login-btn:hover {
+            background-color: #ff4500;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .logo {
+                width: 200px;
+            }
+
+            .hover-container {
+                flex-direction: column;
+            }
+
+            .hover-item {
+                margin-bottom: 20px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Dark overlay over background -->
+    <div class="overlay"></div>
+
+    <!-- Main content -->
+    <div class="content">
+        <!-- Logo with animation -->
+        <img src="/images/logo.png" alt="Bakkie Logo" class="logo">
+
+        <!-- Description paragraph -->
+        <p class="neon-text">
+            Hurry Up !! Sunday on Wheels !! 
+            <br>
+            <br>
+            Grab your Admixtures Here
+        </p>
+
+        <!-- Hover effect containers with images -->
+        <div class="hover-container">
+            <div class="hover-item">
+                <img src="/images/nonveg.jpg" alt="Item 1">
+            </div>
+            <div class="hover-item">
+                <img src="/images/veg.jpg" alt="Item 2">
+            </div>
+            <div class="hover-item">
+                <img src="/images/dairy.jpg" alt="Item 3">
+            </div>
+        </div>
+
+        <!-- Login button -->
+        <a href="/login" class="login-btn">Login Now</a>
+    </div>
+
+    <script>
+        // JavaScript to handle the click event on hover items
+        const hoverItems = document.querySelectorAll('.hover-item');
+
+        hoverItems.forEach(item => {
+            item.addEventListener('click', () => {
+                // Remove active class from all items
+                hoverItems.forEach(i => i.classList.remove('active'));
+                
+                // Add active class to the clicked item
+                item.classList.add('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
